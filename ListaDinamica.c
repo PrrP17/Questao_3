@@ -197,6 +197,40 @@ void menor_preco(Lista* li){
 
 }
 
+//ATV
+
+int listas_concatenadas(Lista* l1, Lista* l2){
+    if(l1 == NULL || l2 == NULL)
+        return 0;
+    if((*l1) == NULL)
+        return 0;
+    No *aux = *l1;
+    while(aux != NULL){
+        inserir_lista_final(l2, aux->dados);
+        aux = aux->prox;
+    }
+    return 1;
+}
+
+int remover_n_produtos(Lista* li, int num){
+    if(li == NULL)
+        return 0;
+    if((*li) == NULL)
+        return 0;
+    No *no = (*li);
+    int i = 1;
+    if(num < tamanho_lista(li)){
+        while(no != NULL && i <= num ){
+            no = no->prox;
+            *li = no;
+            free(no);
+            i++;
+        }
+        printf("\nOperacao realizada com sucesso!");
+    }
+    return 1;
+}
+
 void imprimir_lista(Lista* li){
     if (li == NULL)
         printf("Lista vazia\n");
