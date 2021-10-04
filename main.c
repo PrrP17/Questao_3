@@ -83,7 +83,7 @@ int main(){
 
     imprimir_lista(minha_lista3);
     menor_preco(minha_lista3);
-    remover_n_produtos(minha_lista3, 3);
+    remover_n_produtos(minha_lista, 1);
 
     liberar_lista(minha_lista);
     liberar_lista(minha_lista2);

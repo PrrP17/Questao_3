@@ -35,4 +35,5 @@ void menor_preco(Lista* li);
 void imprimir_lista(Lista* li);
 int listas_concatenadas(Lista* l1, Lista* l2);
 int remover_n_produtos(Lista* li, int num);
+int muda_pos(Lista* li, int pos1, int pos2);
 #endif //QUESTAO_3_LISTADINAMICA_H

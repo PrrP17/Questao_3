@@ -217,17 +217,40 @@ int remover_n_produtos(Lista* li, int num){
         return 0;
     if((*li) == NULL)
         return 0;
-    No *no = (*li);
+    No *aux = *li;
     int i = 1;
     if(num < tamanho_lista(li)){
-        while(no != NULL && i <= num ){
-            no = no->prox;
-            *li = no;
-            free(no);
+        while(aux != NULL && i <= num ){
+            aux = aux->prox;
+            *li = aux;
+            free(aux);
             i++;
         }
         printf("\nOperacao realizada com sucesso!");
     }
+    return 1;
+}
+
+int muda_pos(Lista* li, int pos1, int pos2){
+    if(li == NULL || pos1 <= 0 || pos2 <= 0 || pos1 == pos2)
+        return 0;
+    No *no = *li;
+    No *no2 = *li;
+    No aux;
+    int i = 1;
+    int j = 1;
+    while(no != NULL && i < pos1){
+        no = no->prox;
+        i++;
+    }
+    while(no2 != NULL && j < pos2){
+        no2 = no2->prox;
+        j++;
+    }
+    aux.dados = no->dados;
+    no->dados = no2->dados;
+    no2->dados = aux.dados;
+
     return 1;
 }
 
